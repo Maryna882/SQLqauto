@@ -30,26 +30,38 @@ CREATE TABLE cars (
     FOREIGN KEY (carModelId) REFERENCES car_models(id)
 );
 
-INSERT INTO car_brands (title) 
-VALUES ('Audi', 'BMW', 'Ford', 'Porshe', 'Fiat' ) ;
+//car_brands
+INSERT INTO car_brands (id, title) VALUES(1, 'Audi');
+INSERT INTO car_brands (id, title) VALUES(2, 'BMW');
+INSERT INTO car_brands (id, title) VALUES(3, 'Volvo');
+INSERT INTO car_brands (id, title) VALUES(4, 'Ford');
+INSERT INTO car_brands (id, title) VALUES(5, 'Fiat');
+INSERT INTO car_brands (id, title) VALUES(6, 'Nissan');
 
+//car_models
+INSERT INTO car_models (id, carBrandId, title) VALUES(1, 1, 'A6');
+INSERT INTO car_models (id, carBrandId, title) VALUES(2, 1, 'A7');
+INSERT INTO car_models (id, carBrandId, title) VALUES(3, 1, 'Q8');
+INSERT INTO car_models (id, carBrandId, title) VALUES(4, 2, 'X5');
+INSERT INTO car_models (id, carBrandId, title) VALUES(5, 2, 'X6');
+INSERT INTO car_models (id, carBrandId, title) VALUES(6, 4,
+'Mustang');
+INSERT INTO car_models (id, carBrandId, title) VALUES(7, 5,
+'Fiesta');
 
-INSERT INTO car_models (carBrandId, title) 
-VALUES (1, 'TT', 1, 'R8', 1, 'Q7', 1,'A6', 1, 'A8', 2, '3', 2, '5', 2, 'X5', 2, 'X6',2, 'Z3', 
-3, 'Fiesta', 3, 'Focus', 3, 'Fusion', 3, 'Mondeo', 3, 'Siera', 4, '911', 4, 'Cayenne', 4, 'Panamera', 5, 'Palio', 5, 'Ducato', 5, 'Panda', 5, 'Punto', 5, 'Scudo') ;
+//users
+INSERT INTO users (id, firstName, lastName, email, password)
+VALUES(1, 'Svinka', 'Pepa', 'pepa@gmail.com', 'pepa123');
+INSERT INTO users (id, firstName, lastName, email, password)
+VALUES(2, 'Vanya', 'Kuzminov', 'vanoKuzminov@gmail.com',
+'vanykavshtanyka33');
+INSERT INTO users (id, firstName, lastName, email, password)
+VALUES(3, 'Mukola', 'Kokakola', 'koka@ukr.net', 'muka66');
 
-INSERT INTO users (firstName, lastName, email, password) 
-VALUES 
-('Maryna', 'Kovalets', 'kovalets@gmail.com', 'password123') , 
-('Viacheslav', 'Dublicat', 'dublicat@gmail.com', 'password9h19d') , 
-('Dmytro', 'Selin', 'selin@gmail.com', 'password12drp') ;
-
-
-INSERT INTO cars (userId, carBrandId, carModelId, mileage, initialMileage) 
-VALUES 
-(1, 1, 1, 10353, 0),
-(1, 2, 3, 15200, 2030),
-(2, 3, 4, 16020, 2080),
-(2, 4, 5, 60900, 3095),
-(3, 5, 4, 56300, 2500),
- (3, 5, 2, 30500, 3085);
+//cars
+INSERT INTO cars (id, userId, carBrandId, carModelId, mileage,
+initialMileage) VALUES(1, 1, 1, 3, 132, 130);
+INSERT INTO cars (id, userId, carBrandId, carModelId, mileage,
+initialMileage) VALUES(2, 2, 5, 7, 80, 42);
+INSERT INTO cars (id, userId, carBrandId, carModelId, mileage,
+initialMileage) VALUES(3, 2, 1, 2, 120, 30);
