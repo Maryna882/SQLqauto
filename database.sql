@@ -1,17 +1,17 @@
 CREATE TABLE car_brands (
-    id INT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE car_models (
-    id INT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     carBrandId INT NOT NULL,
     title VARCHAR(50) NOT NULL,
     FOREIGN KEY (carBrandId) REFERENCES car_brands(id)
 );
 
 CREATE TABLE users (
-    id INT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     firstName VARCHAR(50) NOT NULL,
     lastName VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
